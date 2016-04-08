@@ -11,6 +11,12 @@ param(
 
 $versionRegex= "\d+\.\d+\.\d+\.\d+"
 $versionData= [regex]::Matches($buildNumber, $versionRegex)
+Write-Verbose -Verbose "buildNumber:$buildNumber"
+Write-Verbose -Verbose "versionRegex:$versionRegex"
+Write-Verbose -Verbose "versionData.Count:$($versionData.Count)"
+Write-Verbose -Verbose "versionData:$($versionData.Tostring())"
+
+
 switch ($versionData.Count)
 {
 	0
