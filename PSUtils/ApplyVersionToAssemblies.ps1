@@ -15,7 +15,7 @@ function Convert-DateString ([String]$Date, [String[]]$Format)
  
    if ($convertible) { $result }
 }
-function ApplyVersion(){
+function Apply-Version{
 param(
 [Parameter(Mandatory=$True, Position=1)]
 [string]$sourcesDirectory,
@@ -40,8 +40,6 @@ Write-Verbose -Verbose "versionRegex:$versionRegex"
 Write-Verbose -Verbose "versionData.Count:$($versionData.Count)"
 Write-Verbose -Verbose "versionData:$($versionData.Tostring())"
 
-
-Writ
 $files= gci $sourcesDirectory -Recurse -Include "*Properties*" |?{$_.PSIscontainer}| foreach {
 	gci -Path $_.FullName -Recurse -include AssemblyInfo.*}
 if($files)
@@ -58,4 +56,4 @@ else{
 	Write-Warning -Verbose "Found no files."
 }
 }
-Apply-Version $sourcesDirectory $buildNumber
+Apply-Version $sourcesDirectory $buildNumber $MajorMinor
