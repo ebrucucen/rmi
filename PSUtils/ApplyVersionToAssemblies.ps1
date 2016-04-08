@@ -6,7 +6,7 @@
 param(
 [Parameter(Mandatory=$True, Position=1)]
 [string]$sourcesDirectory,
-[Parameter(Madatory=$True, Position=2)]
+[Parameter(Mandatory=$True, Position=2)]
 [string]$buildNumber)
 
 $versionRegex= "\d+\.\d+\.\d+\.\d+"
