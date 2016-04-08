@@ -9,7 +9,7 @@ param(
 [Parameter(Mandatory=$True, Position=2)]
 [string]$buildNumber)
 
-$versionRegex= "\d+\.\d+\.\d+\.\d+"
+$versionRegex= "\d+\.\d+"
 $versionData= [regex]::Matches($buildNumber, $versionRegex)
 Write-Verbose -Verbose "buildNumber:$buildNumber"
 Write-Verbose -Verbose "versionRegex:$versionRegex"
